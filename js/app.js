@@ -11,4 +11,8 @@ const setInnerText = (id, text) => {
 
 const displayTemperature = temp => {
     setInnerText('city-name', temp.name);
+    setInnerText('temp-in-celcius', temp.main.temp);
+    setInnerText('weather', temp.weather[0].main);
+    const url = `http://openweathermap.org/img/wn/${temp.weather[0].icon}@2x.png`;
+    document.getElementById('condition-icon').setAttribute('src', url);
 }
